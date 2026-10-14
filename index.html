@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keuangan Pro Max</title>
+  <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#667eea">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -70,6 +73,13 @@ button:hover{background:#5568d3}
 .filter-row select,.filter-row input{margin:0;font-size:12px;padding:8px 10px}
 </style>
 </head>
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('PWA aktif'))
+    .catch(e => console.log('PWA gagal', e));
+}
+  </script>
 <body>
 <div class="box" id="authBox">
   <h1>💰 Keuangan Pro Max <span>Sinkron semua device 🔄</span></h1>
